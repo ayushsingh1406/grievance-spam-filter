@@ -25,19 +25,46 @@ page = st.sidebar.radio("Go to:", ["Predict", "Model Insights", "Examples", "Abo
 
 st.markdown("""
 <style>
+/* container */
 .result-box {
     padding: 20px;
     border-radius: 10px;
-    background-color: #f0f2f6;
+    background-color: #f0f2f6;  /* light background */
     border: 1px solid #d1d1d1;
+    color: #0b0b0b;               /* dark text for readability */
 }
+
+/* headings and paragraphs inside the box */
+.result-box h3,
+.result-box p,
+.result-box strong {
+    color: #0b0b0b !important;    /* force dark text */
+    margin: 0;
+}
+
+/* success (green) box */
 .success-box {
     background-color: #dff7df;
     border-left: 8px solid #00a000;
+    color: #0b0b0b;
 }
+
+/* error (red) box */
 .error-box {
     background-color: #ffd6d6;
     border-left: 8px solid #d10000;
+    color: #0b0b0b;
+}
+
+/* make the Streamlit textarea text dark as well (best-effort selector) */
+stTextArea textarea {
+    color: white !important;
+    background-color: #333333 !important; 
+}
+            
+/* tokens text / small inline outputs */
+.streamlit-token-list, .stText {
+    color: #0b0b0b !important;
 }
 </style>
 """, unsafe_allow_html=True)
