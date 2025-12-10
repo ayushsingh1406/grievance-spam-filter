@@ -8,6 +8,7 @@ def main():
     sms_small_path = os.path.join(base, "data", "raw", "sms_small.csv")
     sms_full_path = os.path.join(base, "data", "raw", "sms_full.tsv")
     grievance_path = os.path.join(base, "data", "raw", "grievance_500.csv")
+    outgoing_path = os.path.join(base, "data", "raw", "outgoing_spam_1200.csv")  # NEW
 
     # Load datasets using your unified loader
     print("Loading SMS small dataset...")
@@ -19,13 +20,17 @@ def main():
     print("Loading grievance dataset...")
     df_grievance = load_sms(grievance_path)
 
+    print("Loading outgoing spam dataset...")
+    df_outgoing = load_sms(outgoing_path)
+
     print("Shapes:")
     print("Small:", df_small.shape)
     print("Full:", df_full.shape)
     print("Grievance:", df_grievance.shape)
+    print("Outgoing spam:", df_outgoing.shape)
 
     # Combine
-    df = pd.concat([df_small, df_full, df_grievance], ignore_index=True)
+    df = pd.concat([df_small, df_full, df_grievance, df_outgoing], ignore_index=True)
 
     # Shuffle
     df = df.sample(frac=1, random_state=42).reset_index(drop=True)
