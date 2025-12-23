@@ -3,7 +3,7 @@ pandas
 numpy
 matplotlib
 seaborn
-nltk
+# nltk
 flask
 joblib
 jupyter

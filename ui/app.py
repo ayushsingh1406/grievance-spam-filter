@@ -202,6 +202,4 @@ elif page == "About Project":
 
     ### 👨‍💻 Authors
     **Ayush Singh**, CSE Student     
-    **Heramb Pandey**, CSE Student  
-    **Shivam Sharma**, CSE Student
     """)
