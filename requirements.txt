@@ -8,3 +8,4 @@ flask
 joblib
 jupyter
 pytest
+streamlit
