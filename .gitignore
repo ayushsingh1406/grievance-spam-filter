@@ -8,8 +8,8 @@ __pycache__/
 # Streamlit cache
 .streamlit/
 
-# Model files
-models/*.joblib
+# # Model files
+# models/*.joblib
 
 # VSCode settings
 .vscode/
